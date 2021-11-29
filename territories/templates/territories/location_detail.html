@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+Hubris Territories
+{% endblock %}
+{% block content %}
+<h1>{{ location.name }}</h1>
+
+{{ location.formatted_markdown|safe}}
+
+<h2>Rumors / Adventure Hooks</h2>
+<ol>
+    {% for rumor in location.rumor_set.all %}
+    <li>{{ rumor.text }}</a></li>
+    {% endfor %}
+</ol>
+{% endblock %}

@@ -23,6 +23,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("bestiary/", include("bestiary.urls")),
+    path("territories/", include("territories.urls")),
     path("markdownx/", include("markdownx.urls")),
     path("", TemplateView.as_view(template_name="index.html"), name="index"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
