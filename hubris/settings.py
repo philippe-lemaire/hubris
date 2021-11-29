@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["0.0.0.0", "localhost", "127.0.0.1", "hubrisdcc.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    "bestiary",
     "markdownx",
     "django.contrib.admin",
     "django.contrib.auth",

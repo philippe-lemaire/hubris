@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>The Hubris Bestiary</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Alignement</th>
+        <th>AC</th>
+        <th>HD</th>
+        <th>MV</th>
+
+    </tr>
+
+    {% for monster in monster_list %}
+    <tr>
+        <td>
+            <a href="{% url 'bestiary:detail' monster.pk %}">{{ monster.name }}</a>
+        </td>
+        <td>{{ monster.AL }}</td>
+        <td>{{ monster.AC }}</td>
+        <td>{{ monster.HD }}</td>
+        <td>{{ monster.MV }}</td>
+    </tr>
+
+
+
+
+
+    {% endfor %}
+</table>
+{% endblock %}

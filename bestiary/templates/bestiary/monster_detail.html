@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ monster.name }}</h1>
+
+{% if monster.img_url %}
+<img src="{{ monster.img_url }}" />
+{% endif %}
+
+<table class="table">
+    <tr>
+        <td><strong>Init</strong></td>
+        <td>{{ monster.init }}</td>
+        <td><strong>MV</strong></td>
+        <td colspan="3">{{ monster.MV }}</td>
+    </tr>
+    <tr>
+        <td><strong>AC</strong></td>
+        <td>{{ monster.AC }}</td>
+        <td><strong>HD</strong></td>
+        <td>{{ monster.HD }}</td>
+        <td><strong>Act</strong></td>
+        <td>{{ monster.Act }}</td>
+    </tr>
+    <tr>
+        <td><strong>AL</strong></td>
+        <td>{{ monster.AL }}</td>
+        <td><strong>Atk</strong></td>
+        <td colspan="3">{{ monster.Atk }}</td>
+    </tr>
+    <tr>
+        <td><strong>SP</strong></td>
+        <td colspan="5">{{ monster.SP }}</td>
+    </tr>
+    <tr>
+        <td><strong>Spells</strong></td>
+        <td colspan="5">{{ monster.Spells }}</td>
+    </tr>
+    <tr>
+        <td><strong>SV</strong></td>
+        <td colspan="5">{{ monster.SV }}</td>
+    </tr>
+
+</table>
+
+
+{{ monster.formatted_markdown|safe}}
+
+{% endblock %}
