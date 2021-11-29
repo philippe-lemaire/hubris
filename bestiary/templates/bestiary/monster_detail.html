@@ -43,6 +43,7 @@
 
 </table>
 
-<p>{{ monster.description }}</p>
+
+{{ monster.formatted_markdown|safe}}
 
 {% endblock %}

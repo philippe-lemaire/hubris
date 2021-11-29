@@ -1,4 +1,6 @@
 from django.db import models
+from markdownx.models import MarkdownxField
+from markdownx.utils import markdownify
 
 # Create your models here.
 
@@ -17,7 +19,12 @@ class Monster(models.Model):
     SP = models.TextField(blank=True)
     Spells = models.TextField(blank=True)
     SV = models.CharField(max_length=25)
-    description = models.TextField()
+    description = MarkdownxField()
 
     def __str__(self):
         return f"{self.name} ({self.AL})."
+
+    # Create a property that returns the markdown instead
+    @property
+    def formatted_markdown(self):
+        return markdownify(self.description)
