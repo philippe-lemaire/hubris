@@ -24,16 +24,18 @@ class TerritoryDetailView(DetailView):
         land = context.get("territory").slug
 
         # roll and find result for lay of the land
-        roll_lay = roll("d100")
-        key_lay = find_key(roll_lay, lay_of_the_land.get(land))
-        lay = lay_of_the_land.get(land).get(key_lay)
-        context["lay"] = lay
+        if lay_of_the_land.get(land):
+            roll_lay = roll("d100")
+            key_lay = find_key(roll_lay, lay_of_the_land.get(land))
+            lay = lay_of_the_land.get(land).get(key_lay)
+            context["lay"] = lay
 
         # roll and find result for encounter of the land
-        roll_encounter = roll("d100")
-        key_encounter = find_key(roll_encounter, encounters.get(land))
-        encounter = encounters.get(land).get(key_encounter)
-        context["encounter"] = encounter
+        if encounters.get(land):
+            roll_encounter = roll("d100")
+            key_encounter = find_key(roll_encounter, encounters.get(land))
+            encounter = encounters.get(land).get(key_encounter)
+            context["encounter"] = encounter
         return context
 
 
