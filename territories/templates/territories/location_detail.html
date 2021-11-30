@@ -7,10 +7,12 @@ Hubris Territories
 
 {{ location.formatted_markdown|safe}}
 
+{% if location.rumor_set.all %}
 <h2>Rumors / Adventure Hooks</h2>
 <ol>
     {% for rumor in location.rumor_set.all %}
     <li>{{ rumor.text }}</a></li>
     {% endfor %}
 </ol>
+{% endif %}
 {% endblock %}
