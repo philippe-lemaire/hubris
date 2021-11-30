@@ -1,4 +1,4 @@
-blighted_sands = {
+lay_of_the_land_blighted_sands = {
     1: "Large expanse of hot empty desert",
     16: "Oasis that has been corrupted by malignant presence. Any who drink from this water gain 1d3 mutations: Roll 1d6: 1-3) cosmetic mutation (pg 43); 4-5) power mutation (pg 44); 6) calamitous mutation (pg 49).",
     18: "Volcanic region, lava and geysers erupt sending sulfur and ash into the sky.",
