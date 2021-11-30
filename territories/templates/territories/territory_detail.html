@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Hubris Territories
+{% endblock %}
+{% block content %}
+<h1>{{ territory.name }}</h1>
+
+{{ territory.formatted_markdown|safe}}
+<ol>
+    {% for location in territory.location_set.all %}
+
+    <li><a href="{% url 'territories:location' location.slug %}">{{location.name}}</a></li>
+    {% endfor %}
+</ol>
+
+<h3>Random Lay of the land</h3>
+
+<p>{{ lay }}</p>
+
+<h3>Random Encounter</h3>
+
+<p>{{ encounter }}</p>
+
+{% endblock %}
