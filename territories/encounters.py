@@ -9,6 +9,7 @@ from .land_of_perpetual_stone_and_mire.encounters import (
 from .mountains_that_crawl.encounters import encounters_mountains_that_crawl
 from .sea_that_runs_red.encounters import sea_encounters
 from .the_unsettled_expanse.encounters import unsettled_encounters
+from .weeping_forest.encounters import encounters_weeping_forest
 
 encounters = {
     "the-blighted-sands": encounters_blighted_sands,
@@ -20,4 +21,5 @@ encounters = {
     "mountains-that-crawl": encounters_mountains_that_crawl,
     "sea-that-runs-red": sea_encounters,
     "the-unsettled-expanse": unsettled_encounters,
+    "weeping-forest-of-forgotten-memories": encounters_weeping_forest,
 }
