@@ -7,6 +7,7 @@ from .land_of_perpetual_stone_and_mire.lay_of_the_land import (
     land_of_perpetual_stone_and_mire_lay,
 )
 from .mountains_that_crawl.lay_of_the_land import lay_mountains_that_crawl
+from .sea_that_runs_red.lay_of_the_land import lay_sea
 
 lay_of_the_land = {
     "the-blighted-sands": lay_of_the_land_blighted_sands,
@@ -16,5 +17,5 @@ lay_of_the_land = {
     "great-plains-of-unbidden-sorrow": lay_great_plains,
     "land-of-perpetual-stone-and-mire": land_of_perpetual_stone_and_mire_lay,
     "mountains-that-crawl": lay_mountains_that_crawl,
-    # "sea-that-runs-red":
+    "sea-that-runs-red": lay_sea,
 }
