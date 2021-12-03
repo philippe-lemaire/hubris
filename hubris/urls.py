@@ -19,6 +19,7 @@ from django.urls.conf import include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from .views import register, login_request, logout_request
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,4 +27,7 @@ urlpatterns = [
     path("territories/", include("territories.urls")),
     path("markdownx/", include("markdownx.urls")),
     path("", TemplateView.as_view(template_name="index.html"), name="index"),
+    path("auth/register", register, name="register"),
+    path("auth/login", login_request, name="login"),
+    path("auth/logout", logout_request, name="logout"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
