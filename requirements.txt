@@ -4,5 +4,6 @@ psycopg2-binary
 django-countries
 pyuca
 django-markdownx
+django-crispy-forms
 gunicorn
 whitenoise
