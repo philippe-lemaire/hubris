@@ -10,10 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import environ
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# environ object
+env = environ.Env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,7 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+environment = os.getenv("ENVIRONMENT")
+if environment == "production":
+    DEBUG = False
+if environment == "development":
+    DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0", "localhost", "127.0.0.1", "hubrisdcc.herokuapp.com"]
 
@@ -78,17 +87,7 @@ WSGI_APPLICATION = "hubris.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": os.getenv("ENGINE", "django.db.backends.sqlite3"),
-        "HOST": os.getenv("DBHOST", ""),
-        "PORT": os.getenv("DBPORT", ""),
-        "NAME": os.getenv("DBNAME", BASE_DIR / "db.sqlite3"),
-        "USER": os.getenv("DBUSER", ""),
-        "PASSWORD": os.getenv("DBPWD", ""),
-        "TEST": {
-            "NAME": "testdb",
-        },
-    }
+    "default": env.db("DATABASE_URL"),
 }
 
 
